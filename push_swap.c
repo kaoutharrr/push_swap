@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:13:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/01 00:34:21 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/02 04:00:20 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,10 @@ int get_index(t_list *stack, int start_value , int end_value )
 	{
 		if((stack)->content >= start_value && (stack)->content <= end_value)
 			return(i);
-		i++;
+		
 		stack = (stack)->next;
+		i++;
+		
 	}
 	return (-1);
 }

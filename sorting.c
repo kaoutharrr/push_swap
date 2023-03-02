@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 02:30:11 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/01 02:31:42 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/02 05:27:18 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,14 @@
     int start;
     int end;
 	int lsize;
+	 //int i = 0;
 	int max;
 	int min;
+
 	t_list *last;
    
     mid = ((size )  / 2 ) ;
-	offset = 5;
+	offset = size / 5;
 	start  = mid - offset;
 	end = mid + offset;
 	lsize = lstsize(*a);
@@ -94,19 +96,23 @@
 	// print_list(*a);
 	index = get_index(*a, arr[start], arr[end]); 
 	//int limiter = 0;
-	while (*a)
+	while (*a  )
 	{
 		index = get_index(*a, arr[start], arr[end]); 
 		
 		if (index == -1)
 		{
 			index = get_index(*a, arr[start], arr[end]); 
-			// 	if(start < 0)
-			// 	start = 0;
-			// if(end >size )
-			// 	end = size;
+		
+			
 			start -= offset;
 			end += offset;
+			if(start < 0)
+				start = 0;
+			if(end >= size)
+				end = size - 1;
+			//chunk = end - start + 1;
+			
 			
 		}
 		else
@@ -117,7 +123,7 @@
 				index = get_index(*a, arr[start], arr[end]);
 			if ((*a)->content < arr[start] || (*a)->content > arr[end])
 			{		
-	
+				
 				index = get_index(*a, arr[start], arr[end]); 
 				if (index < lsize / 2)
 				{
@@ -127,13 +133,24 @@
 					
 				else
 					reverse_a(a);
+				
 			}
-			
-			
 			 push_b(a , b);
 			 lsize= lstsize(*a);
-		
+// 			   printf("start  : %d \n", start);
+//   printf("arr start  : %d \n", arr[start]);
+//  printf("arr end  : %d \n", arr[end]);
 
+//   printf("lsize  : %d \n", lsize);
+//  printf("end :  %d \n ", end);
+//  printf("index :  %d \n ", index);
+//  printf("stack b\n");
+//   print_list(*b);
+// printf("stack a\n");
+//  print_list(*a);
+			
+			 //printf("index :  %d \n ", index);
+			
 		}
 		if((*b)->content < mid)
 			{
@@ -141,7 +158,24 @@
 			}
 	
  }
-  print_list(*b);
+ //print_list(*b);
+//   printf("start  : %d \n", start);
+//   printf("arr start  : %d \n", arr[start]);
+//  printf("arr end  : %d \n", arr[end]);
+
+//   printf("lsize  : %d \n", lsize);
+//  printf("end :  %d \n ", end);
+//  printf("index :  %d \n ", index);
+//  printf("stack b\n");
+//   print_list(*b);
+// printf("stack a\n");
+//  print_list(*a);
+//  printf("array\n");
+//  while (i < size)
+// 	{
+// 		printf("%d -> ", arr[i]);
+// 		i++;
+// 	}
 	while (*b)
 	{
 		min = min_list(*b);
@@ -173,8 +207,9 @@
 	}
 		
 	}
-	print_list(*a);
- }
+	//print_list(*a);
+  }
+ 
 
 // void	sort_100(t_list **a, t_list **b, int size, int *arr)
 // {
