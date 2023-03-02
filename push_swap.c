@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:13:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/02 04:00:20 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/02 09:00:20 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	push_swap(int *arr, int size)
 		ft_lstadd_back(&a, ft_lstnew(arr[i]));
 		i++;
 	}
-	
+	sort_tab(arr, i);
 	// if (size == 4)
 	// 	sort_three(&a, &b, size);
 	// if (size <= 5)

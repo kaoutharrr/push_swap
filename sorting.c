@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 02:30:11 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/02 05:27:18 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/02 09:14:14 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,150 +81,87 @@
     int start;
     int end;
 	int lsize;
-	 //int i = 0;
-	int max;
-	int min;
+	 int max;
+	//  int min;
 
-	t_list *last;
+	// t_list *last;
    
-    mid = ((size )  / 2 ) ;
-	offset = size / 5;
+    mid = ((size - 1 )  / 2 ) ;
+	offset = size / 8;
 	start  = mid - offset;
 	end = mid + offset;
 	lsize = lstsize(*a);
-	// printf("lsize : %d\n" ,lsize);
-	// print_list(*a);
 	index = get_index(*a, arr[start], arr[end]); 
-	//int limiter = 0;
-	while (*a  )
+	
+	while (*a)
 	{
 		index = get_index(*a, arr[start], arr[end]); 
 		
 		if (index == -1)
 		{
 			index = get_index(*a, arr[start], arr[end]); 
-		
-			
 			start -= offset;
 			end += offset;
 			if(start < 0)
 				start = 0;
 			if(end >= size)
 				end = size - 1;
-			//chunk = end - start + 1;
-			
-			
 		}
 		else
 		{
-		//  printf("start : %d\n" ,start);
-		// 	printf("end : %d\n" ,end);
-			lsize= lstsize(*a);
+			lsize = lstsize(*a);
 				index = get_index(*a, arr[start], arr[end]);
 			if ((*a)->content < arr[start] || (*a)->content > arr[end])
 			{		
 				
 				index = get_index(*a, arr[start], arr[end]); 
 				if (index < lsize / 2)
-				{
-
 					rotate_a(a);
-				}
-					
 				else
 					reverse_a(a);
 				
 			}
-			 push_b(a , b);
-			 lsize= lstsize(*a);
-// 			   printf("start  : %d \n", start);
-//   printf("arr start  : %d \n", arr[start]);
-//  printf("arr end  : %d \n", arr[end]);
-
-//   printf("lsize  : %d \n", lsize);
-//  printf("end :  %d \n ", end);
-//  printf("index :  %d \n ", index);
-//  printf("stack b\n");
-//   print_list(*b);
-// printf("stack a\n");
-//  print_list(*a);
-			
-			 //printf("index :  %d \n ", index);
-			
-		}
-		if((*b)->content < mid)
+			push_b(a , b);
+			lsize= lstsize(*a);
+			if((*b)->content < mid)
 			{
 				rotate_b(b);
 			}
-	
+			
+		}
+		
  }
- //print_list(*b);
-//   printf("start  : %d \n", start);
-//   printf("arr start  : %d \n", arr[start]);
-//  printf("arr end  : %d \n", arr[end]);
 
-//   printf("lsize  : %d \n", lsize);
-//  printf("end :  %d \n ", end);
-//  printf("index :  %d \n ", index);
-//  printf("stack b\n");
-//   print_list(*b);
-// printf("stack a\n");
-//  print_list(*a);
-//  printf("array\n");
-//  while (i < size)
-// 	{
-// 		printf("%d -> ", arr[i]);
-// 		i++;
-// 	}
 	while (*b)
 	{
-		min = min_list(*b);
+		//min = min_list(*b);
 		max = max_list(*b);
 		lsize = lstsize(*b);
-		last = ft_lstlast(*b);
+		//last = ft_lstlast(*b);
 		index = get_index_list(max, *b);
 		if((*b)->content == max)
 			push_a(a,b);
-		// else if((*b)->content == min)
-		// {
-		// 	push_a(a,b);
-		// 	reverse_b(b);
-
-		// }
-
 		else
-	{
+		{
+		lsize = lstsize(*b);
+		index = get_index_list(max, *b);
 		if (index < lsize / 2)
 		{
-			//push_a(a,b);
+			
 				rotate_b(b);
 		}
 		else
 		{
-			//push_a(a,b);
+
 			reverse_b(b);
 		}
 	}
+		// print_list(*b);
 		
 	}
 	//print_list(*a);
   }
  
-
-// void	sort_100(t_list **a, t_list **b, int size, int *arr)
-// {
-// 	int mid;
-// 	int offset;
-// 	int start;
-// 	int end;
-
-// 	mid = size / 2 - 1;
-// 	offset  = size / 8;
-// 	start = mid - offset;
-// 	end = mid + offset;
-// 	size = 6;
-	
-// }
 int	get_index_list(int max, t_list *a)
 {
 	int	i;

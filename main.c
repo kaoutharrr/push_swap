@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:30:15 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/02 03:25:47 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/02 09:00:01 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	magic(char **av, int ac)
 	}
 	already_there(numbers, i);
 	is_sorted(numbers, i);
-	sort_tab(numbers, i);
+	
 	push_swap(numbers, i);
 }
 
