@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 02:30:11 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/02 09:14:14 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/03 00:06:16 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,18 @@
     int start;
     int end;
 	int lsize;
-	 int max;
+	int	i;
+	int max;
 	//  int min;
 
 	// t_list *last;
    
     mid = ((size - 1 )  / 2 ) ;
-	offset = size / 8;
+	offset = size / 18;
 	start  = mid - offset;
 	end = mid + offset;
 	lsize = lstsize(*a);
-	index = get_index(*a, arr[start], arr[end]); 
+	//index = get_index(*a, arr[start], arr[end]); 
 	
 	while (*a)
 	{
@@ -99,7 +100,7 @@
 		
 		if (index == -1)
 		{
-			index = get_index(*a, arr[start], arr[end]); 
+			//index = get_index(*a, arr[start], arr[end]); 
 			start -= offset;
 			end += offset;
 			if(start < 0)
@@ -110,24 +111,29 @@
 		else
 		{
 			lsize = lstsize(*a);
-				index = get_index(*a, arr[start], arr[end]);
-			if ((*a)->content < arr[start] || (*a)->content > arr[end])
-			{		
-				
-				index = get_index(*a, arr[start], arr[end]); 
-				if (index < lsize / 2)
+			i = 0;
+			if (index <= lsize / 2)
+				while (i++ < index)
 					rotate_a(a);
-				else
+			else if (index > lsize / 2)
+				while (i++ < lsize - index)
 					reverse_a(a);
+
+				//index = get_index(*a, arr[start], arr[end]);
+			// if ((*a)->content < arr[start] || (*a)->content > arr[end])
+			// {		
 				
-			}
+			// 	index = get_index(*a, arr[start], arr[end]); 
+			// 	if (index < lsize / 2)
+			// 		rotate_a(a);
+			// 	else
+			// 		reverse_a(a);
+				
+			// }
 			push_b(a , b);
-			lsize= lstsize(*a);
+			// lsize= lstsize(*a);
 			if((*b)->content < mid)
-			{
 				rotate_b(b);
-			}
-			
 		}
 		
  }
@@ -135,31 +141,27 @@
 	while (*b)
 	{
 		//min = min_list(*b);
-		max = max_list(*b);
-		lsize = lstsize(*b);
+		max = arr[end];
 		//last = ft_lstlast(*b);
-		index = get_index_list(max, *b);
 		if((*b)->content == max)
+		{
 			push_a(a,b);
+			end--;
+			size--;
+		}
+		//else if (is_sorted_stack(*a) || (*b)->content > ft_lstlast(*a)->content)
 		else
 		{
-		lsize = lstsize(*b);
-		index = get_index_list(max, *b);
-		if (index < lsize / 2)
-		{
-			
+			index = get_index_list(max, *b);
+			if (index < size / 2)
 				rotate_b(b);
+			else
+				reverse_b(b);
 		}
-		else
-		{
-
-			reverse_b(b);
-		}
-	}
 		// print_list(*b);
 		
 	}
-	//print_list(*a);
+	print_list(*a);
   }
  
 int	get_index_list(int max, t_list *a)
