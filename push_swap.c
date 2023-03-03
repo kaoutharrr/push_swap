@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:13:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/02 09:00:20 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/03 02:19:26 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ void	push_swap(int *arr, int size)
 	// 	sort_three(&a, &b, size);
 	// if (size <= 5)
 	// 	sort_five(&a, &b, size);
-	if (size <= 500)
+	if (size <= 100)
 		sort_100(&a, &b, size, arr);
+	if (size <= 500)
+		sort_500(&a, &b, size, arr);
 }
 
 void	sort_three(t_list **a, t_list **b, int size)
@@ -170,4 +172,39 @@ void	sort_tab(int *arr, int size)
 			i++;
 		
 	}
+}
+
+
+// void	is_sorted(int *arr, int size)
+// {
+// 	int	i;
+	
+// 	i = 0;
+// 	if(size == 1 || size == 0)
+// 			return;
+// 	while(i < size - 1)
+// 	{
+		
+// 		i++;
+		
+			
+// 		if ( arr[i - 1] > arr[i])
+// 			return;
+		
+// 	}
+// 	//error("error!", 1, 1);
+// }
+
+int	is_sorted_list(t_list *list)
+{
+	if(!list || !list->next)
+		return(0);
+	while (list->next)
+	{
+		
+		if(list->content > list->next->content)
+			return(-1);
+		list = list->next;
+	}
+	return(1);
 }

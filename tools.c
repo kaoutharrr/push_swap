@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:37:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/02/27 01:54:02 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/03 02:29:03 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	ft_push(t_list **stack1, t_list **stack2)
 void	ft_rotate(t_list **stack)
 {
 	t_list	*tmp;
-
+	if(!stack)
+		return;
 	tmp = (*stack)->next;
 	(*stack)->next = NULL;
 	ft_lstadd_back(&tmp, *stack);
@@ -56,7 +57,8 @@ void	ft_reverse(t_list **stack)
 {
 	t_list	*last;
 	t_list	*tmp;
-
+	if(!stack)
+		return;
 	tmp = *stack;
 	last = ft_lstlast(*stack);
 	while (tmp->next != last)
