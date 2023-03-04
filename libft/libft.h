@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:18:20 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/02/26 02:29:06 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/03 23:28:26 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
 void	*ft_memmove(void *dst, const void *src, size_t len);
 size_t	ft_strlen(const char *s);
 int		ft_tolower(int c);

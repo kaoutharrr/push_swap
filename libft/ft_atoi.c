@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 21:16:26 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/02/26 02:30:03 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/03 23:27:47 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void	error(char *s, int fd, int ex)
 	}
 	exit (ex);
 }
+
 int	ft_atoi(const char *str)
 {
 	int				i;

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:36:08 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/02/28 18:59:41 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/04 04:46:20 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,35 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (stj);
 }
 
-void	print_list(t_list *list)
+void	sort_tab(int *arr, int size)
 {
-	while(list)
+	int	i;
+	int	tmp;
+
+	i = 0;
+	while (i < size - 1)
 	{
-		printf("{%d} ", list->content);
+		if (arr[i] > arr[i + 1])
+		{
+			tmp = arr[i];
+			arr[i] = arr[i + 1];
+			arr[i + 1] = tmp;
+			i = 0;
+		}
+		else
+			i++;
+	}
+}
+
+int	is_sorted_list(t_list *list)
+{
+	if (!list || !list->next)
+		return (0);
+	while (list->next)
+	{
+		if (list->content > list->next->content)
+			return (-1);
 		list = list->next;
 	}
-	printf("\n");
+	return (1);
 }

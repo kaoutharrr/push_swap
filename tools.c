@@ -6,12 +6,11 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:37:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/03 02:29:03 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/03 22:45:44 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	ft_swap(t_list **stack)
 {
@@ -22,31 +21,29 @@ void	ft_swap(t_list **stack)
 	(*stack)->next->content = swap;
 }
 
-
 void	ft_push(t_list **stack1, t_list **stack2)
 {
 	t_list	*tmp;
-	
+
 	tmp = (*stack1)->next;
-	if(*stack2 == NULL)
+	if (*stack2 == NULL)
 	{
 		(*stack1)->next = *stack2;
 		(*stack2) = *stack1;
 		*stack1 = tmp;
 		(*stack2)->next = NULL;
 	}
-	else 
-	ft_lstadd_front(stack2, *stack1);
+	else
+		ft_lstadd_front(stack2, *stack1);
 	*stack1 = tmp;
-	
-	
-	
 }
+
 void	ft_rotate(t_list **stack)
 {
 	t_list	*tmp;
-	if(!stack)
-		return;
+
+	if (!stack)
+		return ;
 	tmp = (*stack)->next;
 	(*stack)->next = NULL;
 	ft_lstadd_back(&tmp, *stack);
@@ -57,8 +54,9 @@ void	ft_reverse(t_list **stack)
 {
 	t_list	*last;
 	t_list	*tmp;
-	if(!stack)
-		return;
+
+	if (!stack)
+		return ;
 	tmp = *stack;
 	last = ft_lstlast(*stack);
 	while (tmp->next != last)

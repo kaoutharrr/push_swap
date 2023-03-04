@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 01:14:36 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/02/18 04:31:53 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/03 23:29:07 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,3 @@ char	**ft_split(char const *s, char c)
 	str[i] = NULL;
 	return (str);
 }
-// int main ()
-// {
-	
-// }
