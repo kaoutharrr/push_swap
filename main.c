@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:30:15 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/04 04:47:30 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/05 11:19:09 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,18 @@ int	min_list(t_list	*stack)
 	return (min);
 }
 
+void	myfree(char **arg)
+{
+	int	i ;
+
+	i = 0;
+	if (!arg)
+		return ;
+	while (arg[i])
+		free(arg[i++]);
+	free(arg);
+}
+
 void	magic(char **av, int ac)
 {
 	int		i;
@@ -62,7 +74,12 @@ void	magic(char **av, int ac)
 	}
 	already_there(numbers, i);
 	is_sorted(numbers, i);
+	if (i == 1)
+	{
+		exit(0);
+	}
 	push_swap(numbers, i);
+	myfree(splited);
 }
 
 int	main(int ac, char **av)
@@ -76,10 +93,11 @@ int	main(int ac, char **av)
 		error("error!", 1, 1);
 	while (i < ac)
 	{
-		if (!*av[i])
+		if (!*av[i] || !ft_strcmp(av[i], " "))
 			error("error!", 1, 1);
 		i++;
 	}
 	if (ac >= 2)
 		magic(av, ac);
+	//system("leaks push_swap");
 }

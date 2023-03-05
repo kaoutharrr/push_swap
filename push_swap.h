@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:30:37 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/04 04:44:26 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/05 00:14:30 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	error(char *s, int fd, int ex);
 void	is_sorted(int *arr, int size);
 void	already_there(int *arr, int size);
 void	push_swap(int *arr, int size);
-//void	sort_three(t_list **a, t_list **b, int size);
 void	ft_swap(t_list **stack);
 void	ft_push(t_list **stack1, t_list **stack2);
 void	ft_rotate(t_list **stack);
@@ -76,7 +75,6 @@ void	ft_reverse(t_list **stack);
 int		max_list(t_list *stack);
 int		min_list(t_list	*stack);
 int		get_index(t_list *stack, int start_value, int end_value );
-//void	sort_three(t_list **a, t_list **b, int size);
 void	sort_five(t_list **a, t_list **b, int size);
 void	sort_100(t_list **a, t_list **b, int size, int *arr);
 void	sort_tab(int *arr, int size);
@@ -89,5 +87,7 @@ void	check_errors(char *joined);
 void	sort_three(t_list **a);
 void	push_to_b(t_list **a, t_list **b, int *arr, t_ok *data);
 void	push_back_to_a(t_list **a, t_list **b, t_ok *data);
+int		ft_strcmp(char *s1, char *s2);
+void	free_list(t_list *stack);
 
 #	endif

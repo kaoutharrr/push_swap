@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:42:21 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/04 02:19:44 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/04 22:00:46 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	is_sorted(int *arr, int size)
 		if (arr[i - 1] > arr[i])
 			return ;
 	}
+	exit(0);
 }
 
 void	already_there(int *arr, int size)

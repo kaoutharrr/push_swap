@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:37:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/03 22:45:44 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/05 15:23:57 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_swap(t_list **stack)
 {
 	int	swap;
 
+	if (lstsize( *stack) < 2)
+		return ;
 	swap = (*stack)->content;
 	(*stack)->content = (*stack)->next->content;
 	(*stack)->next->content = swap;
@@ -25,6 +27,8 @@ void	ft_push(t_list **stack1, t_list **stack2)
 {
 	t_list	*tmp;
 
+	if (*stack1 == NULL)
+		return ;
 	tmp = (*stack1)->next;
 	if (*stack2 == NULL)
 	{
@@ -42,7 +46,7 @@ void	ft_rotate(t_list **stack)
 {
 	t_list	*tmp;
 
-	if (!stack)
+	if (lstsize( *stack) < 2)
 		return ;
 	tmp = (*stack)->next;
 	(*stack)->next = NULL;
@@ -55,7 +59,7 @@ void	ft_reverse(t_list **stack)
 	t_list	*last;
 	t_list	*tmp;
 
-	if (!stack)
+	if (lstsize( *stack) < 2)
 		return ;
 	tmp = *stack;
 	last = ft_lstlast(*stack);

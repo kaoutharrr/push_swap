@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:13:25 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/04 04:48:22 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/05 05:59:51 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ void	push_swap(int *arr, int size)
 		sort_two(&a);
 	else if (size <= 3)
 		sort_three(&a);
-	else if (size <= 5)
+	else if (size <= 50)
 		sort_five(&a, &b, size);
 	else if (size <= 100)
 		sort_100(&a, &b, size, arr);
 	else if (size <= 500)
 		sort_500(&a, &b, size, arr);
+	free(arr);
+	free_list(a);
 }
 
 void	sort_two(t_list **a)
