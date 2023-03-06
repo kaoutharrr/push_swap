@@ -6,11 +6,12 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:42:21 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/04 22:00:46 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 11:28:55 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "string.h"
 
 char	**split_join(char **av, int ac)
 {
@@ -95,8 +96,8 @@ void	check_errors(char *joined)
 		while (joined[i] == ' '
 			|| (joined[i] >= 9 && joined[i] <= 13))
 					i++;
-		if ((joined[i] == '+' || joined[i] == '-')
-			&& (ft_isdigit(joined[i - 1])))
+		if ((joined[i + 1] == '+' || joined[i + 1] == '-')
+			&& (ft_isdigit(joined[i])))
 			error("error!", 1, 1);
 		if (joined[i] == '+' || joined[i] == '-')
 			i++;

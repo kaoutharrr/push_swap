@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:30:37 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/05 00:14:30 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 12:32:14 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	swap_b(t_list **b);
 int		ft_strlen_a(char *s);
 char	*ft_strchr( char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
-void	print_list(t_list *list);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **lst, t_list *new_item);
 t_list	*ft_lstlast(t_list *lst);

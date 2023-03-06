@@ -6,11 +6,12 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:30:15 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/05 11:19:09 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 12:13:21 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 int	max_list(t_list *stack)
 {
@@ -65,7 +66,7 @@ void	magic(char **av, int ac)
 	splited = split_join(av, ac);
 	while (splited[i])
 		i++;
-	numbers = malloc(i * sizeof(int));
+	numbers = (int *) malloc((i) * sizeof(int));
 	i = 0;
 	while (splited[i])
 	{
@@ -99,5 +100,4 @@ int	main(int ac, char **av)
 	}
 	if (ac >= 2)
 		magic(av, ac);
-	//system("leaks push_swap");
 }

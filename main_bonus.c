@@ -6,11 +6,19 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 03:23:58 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/05 11:49:37 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 12:44:50 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "bonus.h"
+#include "bonus.h"
+
+void	free_all(int *arr, char **s1, t_list **a, t_list **b)
+{
+	myfree(s1);
+	free(arr);
+	free_list(*a);
+	free_list(*b);
+}
 
 void	myfree(char **arg)
 {
@@ -37,7 +45,8 @@ int	min_list(t_list	*stack)
 	}
 	return (min);
 }
-int main(int ac, char **av)
+
+int	main(int ac, char **av)
 {
 	int	i;
 
@@ -54,5 +63,4 @@ int main(int ac, char **av)
 	}
 	if (ac >= 2)
 		errors_check(av, ac);
-	
 }

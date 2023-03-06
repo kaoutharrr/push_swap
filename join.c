@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:36:08 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/05 11:23:57 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 12:43:10 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,6 @@ int	ft_strlen_a(char *s)
 	}
 	return (i);
 }
-
-// char	*ft_strchr( char *s, int c)
-// {
-// 	int	i;
-// 	int	size;
-
-// 	i = 0;
-// 	size = ft_strlen_a(s);
-// 	if (!s)
-// 		return (NULL);
-// 	while (i < size)
-// 	{
-// 		if (s[i] == c)
-// 			return ((s + i));
-// 		else
-// 			i++;
-// 	}
-// 	return (NULL);
-// }
 
 char	*ft_strjoin(char *s1, char *s2)
 {

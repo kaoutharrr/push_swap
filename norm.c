@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 22:13:45 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/05 05:11:09 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 12:28:08 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,15 @@ int	ft_strcmp(char *s1, char *s2)
 
 void	free_list(t_list *stack)
 {
+	t_list	*tmp;
+
 	if (!stack)
 		return ;
-	while (stack)
-	{	
-		free(stack);
+	while (stack->next != NULL)
+	{
+		tmp = stack;
 		stack = stack->next;
+		free(tmp);
 	}
+	free(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:31:35 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/03 23:09:33 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 12:10:08 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-int	lstsize(t_list *lst)
+int	lstsize(t_list *tmp)
 {
 	int		count;
+	t_list	*lst;
 
 	count = 0;
+	lst = tmp;
 	while (lst)
 	{
 		lst = lst->next;
