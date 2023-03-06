@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 06:59:07 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/06 12:28:38 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 21:32:28 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct t_norm
 }t_norm;
 
 int		check_order(t_list *stack);
-void	errors_check(char **av, int ac);
+void	checker(char **av, int ac);
 void	ft_check(t_list **a, t_list **b, int size);
 void	myfree(char **arg);
 void	swap_both(t_list **a, t_list **b);

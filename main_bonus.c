@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 03:23:58 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/06 12:44:50 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 22:56:53 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ int	main(int ac, char **av)
 		i++;
 	}
 	if (ac >= 2)
-		errors_check(av, ac);
+		checker(av, ac);
 }

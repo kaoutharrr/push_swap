@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 21:16:26 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/03 23:27:47 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 23:00:45 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	ft_atoi(const char *str)
 	while (str[i] && (str[i] <= '9' && str[i] >= '0'))
 		res = res * 10 + (str[i++] - 48);
 	if (sign == 1 && res > 2147483647)
-		error("error!", 1, 1);
+		error("error!", 2, 1);
 	if (sign == -1 && res > 2147483648)
-		error("error!", 1, 1);
+		error("error!", 2, 1);
 	return (res * sign);
 }

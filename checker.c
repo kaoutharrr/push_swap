@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 03:37:46 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/06 12:31:51 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 21:32:42 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_check(t_list **a, t_list **b, int size)
 	}
 }
 
-void	errors_check(char **av, int ac)
+void	checker(char **av, int ac)
 {	
 	t_norm	norm;
 

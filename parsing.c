@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:42:21 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/06 11:28:55 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 23:01:04 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	already_there(int *arr, int size)
 		while (j < size)
 		{
 			if (arr[i] == arr[j])
-				error("error!", 1, 1);
+				error("error!", 2, 1);
 			j++;
 		}
 		i++;
@@ -98,11 +98,11 @@ void	check_errors(char *joined)
 					i++;
 		if ((joined[i + 1] == '+' || joined[i + 1] == '-')
 			&& (ft_isdigit(joined[i])))
-			error("error!", 1, 1);
+			error("error!", 2, 1);
 		if (joined[i] == '+' || joined[i] == '-')
 			i++;
-		if (!ft_isdigit(joined[i]))
-			error("error!", 1, 1);
+		if (!ft_isdigit(joined[i]) && joined[i] != ' ' && joined[i] != 0)
+			error("error!", 2, 1);
 		i++;
 	}
 }

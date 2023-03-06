@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:30:15 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/03/06 12:13:21 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/03/06 22:57:54 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,13 @@ int	main(int ac, char **av)
 
 	i = 1;
 	if (ac == 1)
-		exit(1);
+		exit(0);
 	if (!*av[1])
-		error("error!", 1, 1);
+		error("error!", 2, 1);
 	while (i < ac)
 	{
 		if (!*av[i] || !ft_strcmp(av[i], " "))
-			error("error!", 1, 1);
+			error("error!", 2, 1);
 		i++;
 	}
 	if (ac >= 2)
